@@ -42,14 +42,11 @@ function passwordOptions() {
    } else {
    alert ("Are you sure about that?🥳");  
    }
-}
-
 
 // after validation is complete start pushing the selected characters into possible chars array
 
 function randomPassword() {
     
-    var passwordArray = "";
     passwordLength();
     console.log(numChars);
     passwordOptions();
@@ -58,17 +55,18 @@ function randomPassword() {
     console.log(upperChars);
     console.log(lowerChars);
     console.log(possibleChars);
-    if (specialChars === true) {
-      possibleChars=possibleChars.concat(specialCharsArray) 
+    
+    if (specialChars) {
+      possibleChars= possibleChars.concat(specialCharsArray) 
     }
-    if (numericalNums === true) {
-      possibleChars=possibleChars.concat(numericalNumsArray) 
+    if (numericalNums) {
+      possibleChars= possibleChars.concat(numericalNumsArray) 
     }
-    if (lowerChars === true) {
-      possibleChars=possibleChars.concat(lowerCharsArray) 
+    if (lowerChars) {
+      possibleChars= possibleChars.concat(lowerCharsArray) 
     }
-    if (upperChars === true) {
-      possibleChars=possibleChars.concat(upperCharsArray) 
+    if (upperChars) {
+      possibleChars= possibleChars.concat(upperCharsArray) 
     }
     
     for (var i = 0; i < numChars; i++) {
@@ -77,15 +75,6 @@ function randomPassword() {
       console.log(passwordArray)
       return passwordArray;
   }
-
-//loop through possibleChars and select a random character from the possibleChars array based on how many characters they entered into the prompt
-
-// push() the randomly generated character to a empty array called passwordArray
-
-// return passwordArray.join()
-
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
