@@ -75,6 +75,7 @@ function randomPassword() {
       console.log(passwordArray)
       return passwordArray;
   }
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
