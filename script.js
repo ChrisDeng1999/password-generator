@@ -42,7 +42,7 @@ function passwordOptions() {
    } else {
    alert ("Are you sure about that?🥳");  
    }
-
+  }
 // after validation is complete start pushing the selected characters into possible chars array
 
 function randomPassword() {
@@ -75,7 +75,7 @@ function randomPassword() {
       console.log(passwordArray)
       return passwordArray;
   }
-}
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
