@@ -7,10 +7,10 @@ var upperCharsArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','
 var possibleChars = [];
 var passwordArray = [];
 var numChars; 
-var specialChars = confirm("Would you like Special Characters?")
-var numericalNums = confirm("Would you like Numbers?")
-var lowerChars = confirm("Would you like Lower Case Letters?")
-var upperChars = confirm("Would you like Upper Case Letters?")
+var specialChars;
+var numericalNums; 
+var lowerChars;
+var upperChars; 
 
 //Function to determine the length of the password
 
@@ -44,12 +44,23 @@ if (upperChars) {
    possibleChars.concat(upperCharsArray) 
 }
 
+
 // validate that at least one option was selected
-function 
-if (!specialChars && !numericalNums && !lowerNums && !upperNums) {
-  prompt ("You need to select at least one type of character!");
-  // generatePassword();
+
+function createPassword () {
+  var specialChars = confirm("Would you like Special Characters?😏");
+  var numericalNums = confirm("Would you like Numbers?😏");
+  var lowerChars = confirm("Would you like Lower Case Letters?😏");
+  var upperChars = confirm("Would you like Upper Case Letters?😏");
+  if (!specialChars && !numericalNums && !lowerChars && !upperChars) {
+   alert ("You need to select at least one type of character!😒");
+   createPassword();
+  } else {
+    alert ("Are you sure about that?🥳")
+  }
 }
+
+createPassword();
 
 // after validation is complete start pushing the selected characters into possible chars array
 
