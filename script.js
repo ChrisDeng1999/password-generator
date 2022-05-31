@@ -1,40 +1,51 @@
 //create variables to hold the character options for Special, Lowercase, Uppercase, and Numeric Character
 
-var specialCharsArray = ['!','@','#','$','%','^','&','*','+','-'];
+var specialCharsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "}", "[", "]", ";", ":", "'", "`", "~", "<", ",", ">", ".", "?", "/", "|"];
 var numericalNumsArray = ['0','1','2','3','4','5','6','7','8','9'];
 var lowerCharsArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCharsArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-
-
-//create an empty array that will hold the user selcted characters
-
 var possibleChars = [];
 var passwordArray = [];
-
-// on game start prompt for users number of character and hold in a variable
-var numChars = prompt("How many characters would you like in your password?");
-
-//check the users input and comfirm they put in a number between 8 and 128, and that it is a number
-
-// write function that validates users input
-
-function validatesUserInput (chars) {
-  // parseInt(chars)
-  if (chars < 8 || chars >128);
-  return null;
-}
-
-validatesUserInput();
-
-// after validation create variables for character selections
-
+var numChars; 
 var specialChars = confirm("Would you like Special Characters?")
 var numericalNums = confirm("Would you like Numbers?")
 var lowerChars = confirm("Would you like Lower Case Letters?")
 var upperChars = confirm("Would you like Upper Case Letters?")
 
-// validate that at least one option was selected
+//Function to determine the length of the password
 
+function validatesUserInput () {
+  numChars = prompt("How many characters would you like in your password?(You must choose between 8-128)");
+    if (numChars < 8) {
+      alert("Please pick a number is either 8 or bigger 😐");
+      validatesUserInput ();
+    } else if (numChars > 128) {
+      alert("Please pick a number that is either 128 or smaller :D 😐");
+      validatesUserInput ();
+    } else if (isNaN(numChars)) {
+      alert("Please write a numerical number that is between 8-128 🙄");
+      validatesUserInput ();
+    } else {
+      alert("Thank you! You will now select whether or not you would like to include Special Characters, Numerical Numbers, Lowercase Letters, or Uppercase Letter!😁");
+    } 
+}
+validatesUserInput();
+
+if (specialChars) {
+  possibleChars.concat(specialCharsArray) 
+}
+if (numericalNums) {
+   possibleChars.concat(numericalNumsArray) 
+}
+if (lowerChars) {
+   possibleChars.concat(lowerCharsArray) 
+}
+if (upperChars) {
+   possibleChars.concat(upperCharsArray) 
+}
+
+// validate that at least one option was selected
+function 
 if (!specialChars && !numericalNums && !lowerNums && !upperNums) {
   prompt ("You need to select at least one type of character!");
   // generatePassword();
