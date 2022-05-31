@@ -5,7 +5,7 @@ var numericalNumsArray = ['0','1','2','3','4','5','6','7','8','9'];
 var lowerCharsArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCharsArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var possibleChars = [];
-var passwordArray = [];
+var passwordArray = "";
 var numChars; 
 var specialChars;
 var numericalNums;
@@ -56,6 +56,8 @@ function randomPassword() {
     console.log(lowerChars);
     console.log(possibleChars);
     
+    possibleChars = [];
+
     if (specialChars) {
       possibleChars= possibleChars.concat(specialCharsArray) 
     }
@@ -68,6 +70,8 @@ function randomPassword() {
     if (upperChars) {
       possibleChars= possibleChars.concat(upperCharsArray) 
     }
+    
+    passwordArray= ""; 
     
     for (var i = 0; i < numChars; i++) {
         passwordArray += possibleChars[Math.floor(Math.random() * possibleChars.length)];
@@ -83,6 +87,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = randomPassword();
+  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
